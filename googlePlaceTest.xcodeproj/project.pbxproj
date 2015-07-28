@@ -15,6 +15,11 @@
 		128AB7871B67BB29000C8542 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128AB7861B67BB29000C8542 /* Images.xcassets */; };
 		128AB78A1B67BB29000C8542 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 128AB7881B67BB29000C8542 /* LaunchScreen.xib */; };
 		128AB7961B67BB29000C8542 /* googlePlaceTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 128AB7951B67BB29000C8542 /* googlePlaceTestTests.m */; };
+		128AB7C91B67DF17000C8542 /* MVPlaceSearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 128AB7C31B67DF17000C8542 /* MVPlaceSearchTextField.m */; };
+		128AB7CA1B67DF17000C8542 /* PlaceDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 128AB7C51B67DF17000C8542 /* PlaceDetail.m */; };
+		128AB7CB1B67DF17000C8542 /* PlaceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 128AB7C71B67DF17000C8542 /* PlaceObject.m */; };
+		128AB7D31B67DF97000C8542 /* MLPAutoCompleteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 128AB7CD1B67DF97000C8542 /* MLPAutoCompleteTextField.m */; };
+		128AB7D41B67DF97000C8542 /* NSString+Levenshtein.m in Sources */ = {isa = PBXBuildFile; fileRef = 128AB7D21B67DF97000C8542 /* NSString+Levenshtein.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,19 @@
 		128AB78F1B67BB29000C8542 /* googlePlaceTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = googlePlaceTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		128AB7941B67BB29000C8542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		128AB7951B67BB29000C8542 /* googlePlaceTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = googlePlaceTestTests.m; sourceTree = "<group>"; };
+		128AB7C21B67DF17000C8542 /* MVPlaceSearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVPlaceSearchTextField.h; sourceTree = "<group>"; };
+		128AB7C31B67DF17000C8542 /* MVPlaceSearchTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVPlaceSearchTextField.m; sourceTree = "<group>"; };
+		128AB7C41B67DF17000C8542 /* PlaceDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceDetail.h; sourceTree = "<group>"; };
+		128AB7C51B67DF17000C8542 /* PlaceDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceDetail.m; sourceTree = "<group>"; };
+		128AB7C61B67DF17000C8542 /* PlaceObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceObject.h; sourceTree = "<group>"; };
+		128AB7C71B67DF17000C8542 /* PlaceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceObject.m; sourceTree = "<group>"; };
+		128AB7CC1B67DF97000C8542 /* MLPAutoCompleteTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAutoCompleteTextField.h; sourceTree = "<group>"; };
+		128AB7CD1B67DF97000C8542 /* MLPAutoCompleteTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLPAutoCompleteTextField.m; sourceTree = "<group>"; };
+		128AB7CE1B67DF97000C8542 /* MLPAutoCompleteTextFieldDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAutoCompleteTextFieldDataSource.h; sourceTree = "<group>"; };
+		128AB7CF1B67DF97000C8542 /* MLPAutoCompleteTextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAutoCompleteTextFieldDelegate.h; sourceTree = "<group>"; };
+		128AB7D01B67DF97000C8542 /* MLPAutoCompletionObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLPAutoCompletionObject.h; sourceTree = "<group>"; };
+		128AB7D11B67DF97000C8542 /* NSString+Levenshtein.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Levenshtein.h"; sourceTree = "<group>"; };
+		128AB7D21B67DF97000C8542 /* NSString+Levenshtein.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Levenshtein.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +101,7 @@
 		128AB7751B67BB29000C8542 /* googlePlaceTest */ = {
 			isa = PBXGroup;
 			children = (
+				128AB7D51B67E0EC000C8542 /* MVPlaceSerchTextField */,
 				128AB77A1B67BB29000C8542 /* AppDelegate.h */,
 				128AB77B1B67BB29000C8542 /* AppDelegate.m */,
 				128AB7801B67BB29000C8542 /* ViewController.h */,
@@ -120,6 +139,26 @@
 				128AB7941B67BB29000C8542 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		128AB7D51B67E0EC000C8542 /* MVPlaceSerchTextField */ = {
+			isa = PBXGroup;
+			children = (
+				128AB7CC1B67DF97000C8542 /* MLPAutoCompleteTextField.h */,
+				128AB7CD1B67DF97000C8542 /* MLPAutoCompleteTextField.m */,
+				128AB7CE1B67DF97000C8542 /* MLPAutoCompleteTextFieldDataSource.h */,
+				128AB7CF1B67DF97000C8542 /* MLPAutoCompleteTextFieldDelegate.h */,
+				128AB7D01B67DF97000C8542 /* MLPAutoCompletionObject.h */,
+				128AB7D11B67DF97000C8542 /* NSString+Levenshtein.h */,
+				128AB7D21B67DF97000C8542 /* NSString+Levenshtein.m */,
+				128AB7C21B67DF17000C8542 /* MVPlaceSearchTextField.h */,
+				128AB7C31B67DF17000C8542 /* MVPlaceSearchTextField.m */,
+				128AB7C41B67DF17000C8542 /* PlaceDetail.h */,
+				128AB7C51B67DF17000C8542 /* PlaceDetail.m */,
+				128AB7C61B67DF17000C8542 /* PlaceObject.h */,
+				128AB7C71B67DF17000C8542 /* PlaceObject.m */,
+			);
+			name = MVPlaceSerchTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,9 +261,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				128AB7CA1B67DF17000C8542 /* PlaceDetail.m in Sources */,
+				128AB7D31B67DF97000C8542 /* MLPAutoCompleteTextField.m in Sources */,
 				128AB77C1B67BB29000C8542 /* AppDelegate.m in Sources */,
+				128AB7D41B67DF97000C8542 /* NSString+Levenshtein.m in Sources */,
+				128AB7C91B67DF17000C8542 /* MVPlaceSearchTextField.m in Sources */,
 				128AB77F1B67BB29000C8542 /* googlePlaceTest.xcdatamodeld in Sources */,
 				128AB7821B67BB29000C8542 /* ViewController.m in Sources */,
+				128AB7CB1B67DF17000C8542 /* PlaceObject.m in Sources */,
 				128AB7791B67BB29000C8542 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +466,7 @@
 				128AB79B1B67BB29000C8542 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		128AB79C1B67BB29000C8542 /* Build configuration list for PBXNativeTarget "googlePlaceTestTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +475,7 @@
 				128AB79E1B67BB29000C8542 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MVPlaceSearchTextField.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <PlaceSearchTextFieldDelegate,UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet MVPlaceSearchTextField *searchLocation;
 
 
 @end

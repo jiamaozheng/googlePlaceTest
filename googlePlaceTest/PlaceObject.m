@@ -8,7 +8,9 @@
 
 #import "PlaceObject.h"
 @interface PlaceObject ()
+
 @property (strong) NSString *placeName;
+
 @end
 
 @implementation PlaceObject

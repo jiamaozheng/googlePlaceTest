@@ -15,7 +15,25 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
+    //http://www.raywenderlich.com/336/auto-complete-tutorial-for-ios-how-to-auto-complete-with-custom-values
+    
     [super viewDidLoad];
+    self.pastUrls = [[NSMutableArray alloc] initWithObjects:@"www.google.com", @"www.uvm.edu",@"www.yahoo.com", @"www.uchicago.edu", @"www.news.com", nil];
+    self.autocompleteUrls = [[NSMutableArray alloc] init];
+    
+    self.autocompleteTableView = [[UITableView alloc] initWithFrame:
+                                  CGRectMake(self.urlField.frame.origin.x, self.urlField.frame.origin.y + 30, self.urlField.frame.size.width, 150) style:UITableViewStylePlain];
+    self.autocompleteTableView.delegate = self;
+    self.autocompleteTableView.dataSource = self;
+    self.autocompleteTableView.scrollEnabled = YES;
+//    [self.autocompleteTableView setSeparatorStyle:UITableViewCellStyleDefault];
+    self.autocompleteTableView.hidden = YES;
+    
+    
+    self.urlField.delegate = self;
+    [self.view addSubview:self.autocompleteTableView];
+   
     
     self.searchLocation.placeSearchDelegate                 = self;
     self.searchLocation.strApiKey                           = @"AIzaSyCDi2dklT-95tEHqYoE7Tklwzn3eJP-MtM";
@@ -25,10 +43,96 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)searchAutocompleteEntriesWithSubstring:(NSString *)substring {
+    
+    // Put anything that starts with this substring into the autocompleteUrls array
+    // The items in this array is what will show up in the table view
+    [self.autocompleteUrls removeAllObjects];
+    for(NSString *curString in self.pastUrls) {
+        NSRange substringRange = [curString rangeOfString:substring];
+        if (substringRange.location == 0) {
+            [self.autocompleteUrls addObject:curString];
+        }
+    }
+    [self.autocompleteTableView reloadData];
+}
+
+
+#pragma mark UITextFieldDelegate methods
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    self.autocompleteTableView.hidden = NO;
+    
+    NSString *substring = [NSString stringWithString:textField.text];
+    substring = [substring stringByReplacingCharactersInRange:range withString:string];
+    [self searchAutocompleteEntriesWithSubstring:substring];
+    return YES;
+}
+
+#pragma mark UITableViewDataSource methods
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger) section {
+    return self.autocompleteUrls.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+      UITableViewCell *cell = nil;
+    
+//    UIView *separatorView = [[UIView alloc] initWithFrame:CGRectMake
+//                             (0, cell.frame.size.height-1,
+//                              cell.frame.size.width, 1)];
+//    [separatorView setBackgroundColor:[UIColor lightGrayColor]];
+//    [separatorView setAlpha:0.8f];
+//    
+//    [cell addSubview:separatorView];
+    
+  
+    static NSString *AutoCompleteRowIdentifier = @"AutoCompleteRowIdentifier";
+    cell = [tableView dequeueReusableCellWithIdentifier:AutoCompleteRowIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]
+                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AutoCompleteRowIdentifier];
+    }
+    
+    cell.textLabel.text = [self.autocompleteUrls objectAtIndex:indexPath.row];
+//    
+//    cell.contentView.layer.borderColor = [[UIColor grayColor] CGColor];
+//    cell.contentView.layer.borderWidth = 1;
+    return cell;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    if (section == tableView.numberOfSections - 1) {
+        return [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
+    }
+    return nil;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section == tableView.numberOfSections - 1) {
+        return 1;
+    }
+    return 0;
+}
+
+#pragma mark UITableViewDelegate methods
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    self.urlField.text = selectedCell.textLabel.text;
+    tableView.hidden = YES;
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{

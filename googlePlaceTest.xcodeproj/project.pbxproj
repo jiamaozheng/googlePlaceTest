@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		122C21111B7A7A600046F28C /* Autocomplete.m in Sources */ = {isa = PBXBuildFile; fileRef = 122C21101B7A7A600046F28C /* Autocomplete.m */; };
+		122C21141B7A83430046F28C /* AutoFillTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122C21131B7A83430046F28C /* AutoFillTableViewController.m */; };
 		128AB7791B67BB29000C8542 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 128AB7781B67BB29000C8542 /* main.m */; };
 		128AB77C1B67BB29000C8542 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 128AB77B1B67BB29000C8542 /* AppDelegate.m */; };
 		128AB77F1B67BB29000C8542 /* googlePlaceTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 128AB77D1B67BB29000C8542 /* googlePlaceTest.xcdatamodeld */; };
@@ -33,6 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		122C210F1B7A7A600046F28C /* Autocomplete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Autocomplete.h; sourceTree = "<group>"; };
+		122C21101B7A7A600046F28C /* Autocomplete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Autocomplete.m; sourceTree = "<group>"; };
+		122C21121B7A83430046F28C /* AutoFillTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoFillTableViewController.h; sourceTree = "<group>"; };
+		122C21131B7A83430046F28C /* AutoFillTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoFillTableViewController.m; sourceTree = "<group>"; };
 		128AB7731B67BB29000C8542 /* googlePlaceTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = googlePlaceTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		128AB7771B67BB29000C8542 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		128AB7781B67BB29000C8542 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -101,6 +107,10 @@
 		128AB7751B67BB29000C8542 /* googlePlaceTest */ = {
 			isa = PBXGroup;
 			children = (
+				122C21121B7A83430046F28C /* AutoFillTableViewController.h */,
+				122C21131B7A83430046F28C /* AutoFillTableViewController.m */,
+				122C210F1B7A7A600046F28C /* Autocomplete.h */,
+				122C21101B7A7A600046F28C /* Autocomplete.m */,
 				128AB7D51B67E0EC000C8542 /* MVPlaceSerchTextField */,
 				128AB77A1B67BB29000C8542 /* AppDelegate.h */,
 				128AB77B1B67BB29000C8542 /* AppDelegate.m */,
@@ -264,12 +274,14 @@
 				128AB7CA1B67DF17000C8542 /* PlaceDetail.m in Sources */,
 				128AB7D31B67DF97000C8542 /* MLPAutoCompleteTextField.m in Sources */,
 				128AB77C1B67BB29000C8542 /* AppDelegate.m in Sources */,
+				122C21141B7A83430046F28C /* AutoFillTableViewController.m in Sources */,
 				128AB7D41B67DF97000C8542 /* NSString+Levenshtein.m in Sources */,
 				128AB7C91B67DF17000C8542 /* MVPlaceSearchTextField.m in Sources */,
 				128AB77F1B67BB29000C8542 /* googlePlaceTest.xcdatamodeld in Sources */,
 				128AB7821B67BB29000C8542 /* ViewController.m in Sources */,
 				128AB7CB1B67DF17000C8542 /* PlaceObject.m in Sources */,
 				128AB7791B67BB29000C8542 /* main.m in Sources */,
+				122C21111B7A7A600046F28C /* Autocomplete.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
